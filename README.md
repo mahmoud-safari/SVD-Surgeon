@@ -1,1 +1,52 @@
 # SVD-Surgeon
+
+**Optimal Brain Surgeon for SVD-based Network Compression**
+
+SVD-Surgeon is a general corrective layer that improves SVD-based pruning methods. Given a truncated SVD of a weight matrix, SVD-Surgeon:
+
+1. **Update:** Analytically corrects the retained singular values to compensate for the loss introduced by truncation, using a second-order (OBS) correction derived from the Fisher information.
+2. **Selection:** Optionally selects which singular values to retain based on OBS sensitivity scores rather than magnitude alone.
+
+SVD-Surgeon operates in a single shot with no iterative optimization or fine-tuning.
+
+📄 **Paper:** [SVD-Surgeon: Optimal Singular-Value Surgery for Large Language Model Compression](link to my arxiv paper when posted)
+
+🔬 **Paper experiments:** For full reproduction of paper results (SVD-Surgeon applied on top of [SVD-LLM](https://github.com/AIoT-MLSys-Lab/SVD-LLM)), see [our fork of SVD-LLM](https://github.com/...).
+
+## Installation
+
+```bash
+git clone https://github.com/svd-surgeon.git ...
+cd svd-surgeon
+pip install -r requirements.txt
+```
+
+## Quick Start
+
+### Command Line
+
+```bash
+# Plain SVD baseline for comparison
+python compress.py --model facebook/opt-125m --ratio 0.9 --no_obs
+
+# SVD-Surgeon compression
+python compress.py --model facebook/opt-125m --ratio 0.9 --reuse_hbars --hbar_save_path hbar.pt
+
+# With OBS-based selection
+python compress.py --model facebook/opt-125m --ratio 0.9 --select_by_loss --reuse_hbars --hbar_save_path hbar.pt
+```
+
+## Citation
+
+```bibtex
+@article{svdsurgeon2026,
+  title={SVD-Surgeon: Optimal Singular-Value Surgery for Large Language Model Compression},
+  author={...},
+  journal={arXiv preprint arXiv:...},
+  year={2025}
+}
+```
+
+## License
+
+MIT License
