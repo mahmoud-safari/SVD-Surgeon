@@ -9,14 +9,14 @@ SVD-Surgeon is a general corrective layer that improves SVD-based pruning method
 
 SVD-Surgeon operates in a single shot with no iterative optimization or fine-tuning.
 
-📄 **Paper:** [SVD-Surgeon: Optimal Singular-Value Surgery for Large Language Model Compression](link to my arxiv paper when posted)
+**Paper:** [SVD-Surgeon: Optimal Singular-Value Surgery for Large Language Model Compression](https://arxiv/... link to my arxiv paper when posted)
 
-🔬 **Paper experiments:** For full reproduction of paper results (SVD-Surgeon applied on top of [SVD-LLM](https://github.com/AIoT-MLSys-Lab/SVD-LLM)), see [our fork of SVD-LLM](https://github.com/...).
+**Paper experiments:** For full reproduction of paper results (SVD-Surgeon applied on top of [SVD-LLM](https://github.com/AIoT-MLSys-Lab/SVD-LLM)), see [our fork of SVD-LLM](https://github.com/...).
 
 ## Installation
 
 ```bash
-git clone https://github.com/svd-surgeon.git ...
+git clone https://github.com/mahmoud-safari/SVD-Surgeon.git
 cd svd-surgeon
 pip install -r requirements.txt
 ```
@@ -35,6 +35,8 @@ python compress.py --model facebook/opt-125m --ratio 0.9 --reuse_hbars --hbar_sa
 # With OBS-based selection
 python compress.py --model facebook/opt-125m --ratio 0.9 --select_by_loss --reuse_hbars --hbar_save_path hbar.pt
 ```
+
+On the first run with `--hbar_save_path`, SVD-Surgeon computes the spectral Fisher and saves it to `hbar.pt`. Subsequent runs with `--reuse_hbars` load it from disk, making compression much faster.
 
 ## Citation
 
