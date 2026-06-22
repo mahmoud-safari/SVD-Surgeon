@@ -1,6 +1,6 @@
 # SVD-Surgeon
 
-**Optimal Brain Surgeon for SVD-based Network Compression**
+**Optimal Singular-Value Surgery for LLM Compression**
 
 SVD-Surgeon is a general corrective layer that improves SVD-based pruning methods. Given a truncated SVD of a weight matrix, SVD-Surgeon:
 
