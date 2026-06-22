@@ -9,9 +9,7 @@ SVD-Surgeon is a general corrective layer that improves SVD-based pruning method
 
 SVD-Surgeon operates in a single shot with no iterative optimization or fine-tuning.
 
-**Paper:** [SVD-Surgeon: Optimal Singular-Value Surgery for Large Language Model Compression](https://arxiv/... link to my arxiv paper when posted)
-
-**Paper experiments:** For full reproduction of paper results (SVD-Surgeon applied on top of [SVD-LLM](https://github.com/AIoT-MLSys-Lab/SVD-LLM)), see [our fork of SVD-LLM](https://github.com/...).
+**Paper experiments:** For full reproduction of paper results (SVD-Surgeon applied on top of [SVD-LLM](https://github.com/AIoT-MLSys-Lab/SVD-LLM)), see [our fork of SVD-LLM](https://github.com/mahmoud-safari/SVD-LLM/tree/svd_surgeon).
 
 ## Installation
 
@@ -38,16 +36,6 @@ python compress.py --model facebook/opt-125m --ratio 0.9 --select_by_loss --reus
 
 On the first run with `--hbar_save_path`, SVD-Surgeon computes the spectral Fisher and saves it to `hbar.pt`. Subsequent runs with `--reuse_hbars` load it from disk, making compression much faster.
 
-## Citation
-
-```bibtex
-@article{svdsurgeon2026,
-  title={SVD-Surgeon: Optimal Singular-Value Surgery for Large Language Model Compression},
-  author={...},
-  journal={arXiv preprint arXiv:...},
-  year={2025}
-}
-```
 
 ## License
 
