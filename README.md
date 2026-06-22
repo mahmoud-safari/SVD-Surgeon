@@ -1,6 +1,4 @@
-# SVD-Surgeon
-
-**Optimal Singular-Value Surgery for LLM Compression**
+<h1 align="center">SVD-Surgeon: Optimal Singular-Value Surgery for<br>Large Language Model Compression</h1>
 
 SVD-Surgeon is a general corrective layer that improves SVD-based pruning methods. Given a truncated SVD of a weight matrix, SVD-Surgeon:
 
